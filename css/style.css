@@ -104,12 +104,14 @@ main .wrapper .tasks article .task{
     border: 1px solid var(--colorPrincipal);
     box-shadow:2px 2px 2px 1px var(--colorPrincipal);
     
+    
 }
 
 main .wrapper .tasks article .task h3{
     padding-left: 10px;
     flex-grow: 3;
     font-weight: bold;
+    cursor: pointer;
 }
 
 main .wrapper .tasks article .task p{
