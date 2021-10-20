@@ -57,6 +57,7 @@ header div nav ul {
 header div nav ul li a{    
     text-decoration: none;
     color: var(--colorLetra);
+    transition: 1s;
 }
 
 header div>div{
@@ -81,11 +82,13 @@ header div nav {
 
 header div nav ul li:hover a{    
     color: var(--hoverColor);
+    transition: 1s;
 }
-/* #active{
-    
+
+#active{
+    transition: 1s;
     color: var(--hoverColor);
-} */
+}
 
 
 /*FIN HEADER*/
