@@ -8,6 +8,7 @@ font-family: 'Rampart One', cursive; */
     --colorPrincipal: rgb(21, 99, 163);
     --colorLetra:white;
     --hoverColor: rgba(240, 26, 26, 0.904);
+    --fontMain: 'Nanum Myeongjo', serif;
 }
 
 
@@ -25,7 +26,7 @@ img{
 }
 
 body{
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: var(--fontMain);
     
 }
 
@@ -41,38 +42,39 @@ header{
     padding: 3px;
 }
 
-header nav ul {
+header div nav ul {
     font-family: 'Rampart One';
     display: flex;
     justify-content: space-evenly;
     
 }
 
-header nav ul li a{    
+header div nav ul li a{    
     text-decoration: none;
     color: var(--colorLetra);
 }
 
-header>div{
+header div>div{
     display: flex;
     justify-content: space-between;
-    font-size: 200%;
+    font-size: 150%;
     margin-bottom: 10px;
+    font-weight: 800;
 }
 
-header>div div{
+header div >div div{
     cursor: pointer;
 }
 
-header>div div:hover{
+header div >div div:hover{
     color: var(--hoverColor);
 }
 
-header nav {
+header div nav {
     margin-bottom: 3px;
 }
 
-header nav ul li:hover a{    
+header div nav ul li:hover a{    
     color: var(--hoverColor);
 }
 /* #active{
