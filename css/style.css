@@ -12,6 +12,7 @@ font-family: 'Rampart One', cursive; */
     --priourgente: red;
     --prionormal:yellow;
     --priorelaxed:green;
+    --fontSize: 16px;
 }
 
 *{
@@ -98,7 +99,8 @@ main .wrapper .tasks article .task{
     margin: 10px auto 0px auto;
     padding :5px;
     border: 1px solid var(--colorPrincipal);
-    /* background: linear-gradient(90deg, rgba(0,255,85,0.3533788515406162) 0%, rgba(206,214,11,0.6530987394957983) 58%, rgba(255,0,0,0.14889705882352944) 100%); */
+    box-shadow:2px 2px 2px 1px var(--colorPrincipal);
+    
 }
 
 main .wrapper .tasks article .task h3{
@@ -122,11 +124,12 @@ main .wrapper .tasks article .task i:first-child{
 }
 
 main .wrapper .tasks article .description{
-   /*  display: none; */
+    display: none;
     height: auto;    
     border-bottom: 1px solid var(--colorPrincipal);
     border-left: 1px solid var(--colorPrincipal);
     border-right: 1px solid var(--colorPrincipal);
+    box-shadow:1px 1px 1px 1px var(--colorPrincipal);
     transition: 0.5s;
 }
 
@@ -151,6 +154,26 @@ main .wrapper .tasks article .description button{
     color: white;
     cursor: pointer;
 }
+
+
+
+
+.add {
+    text-align: center;
+    color: white;
+    font-size: calc(var(--fontSize) * 3);
+    position: fixed;
+    width: 100%;
+    bottom: 0;   
+    background-color: var(--colorPrincipal);
+    
+}
+
+.add i{
+    cursor: pointer;
+}
+
+
 
 
 
