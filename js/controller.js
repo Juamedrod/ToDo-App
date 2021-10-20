@@ -3,7 +3,12 @@
 
 function deleteTask(event) {
     let id = event.target.dataset.taskid;
-    tasksActive.splice(tasksActive.findIndex(e => e.id == id), 1);
+
+    let newTask = JSON.parse(JSON.stringify(findById(id)));//deep copy of task going to be deleted
+    newTask.id = parseInt(tasksCompleted.at(-1).id) + 1;
+    tasksCompleted.push(newTask);//push of task to completed array
+
+    tasksActive.splice(tasksActive.findIndex(e => e.id == id), 1);//delete the task from being active
     paintTasks(tasksActive, seccionTasks);
 }
 

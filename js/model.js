@@ -17,4 +17,15 @@ const tasksActive = new Array(
 );
 
 
+const tasksCompleted = new Array(
+    {
+        id: 1,
+        title: 'Dejar los miedos atrás',
+        description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
+        percent: 100,
+        priority: 0
+    },
+);
+
+
 const priorityMap = ['red', 'yellow', 'yellowgreen'];

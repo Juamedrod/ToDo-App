@@ -2,8 +2,9 @@
 const seccionTasks = document.querySelector('.tasks');
 const btnAddTask = document.querySelector('#addTask');
 const seccionPopUp = document.querySelector('.popup');
-
-
+const home = document.querySelector('nav1');
+const actives = document.querySelector('nav2');
+const completed = document.querySelector('nav3');
 
 /*Global Variables*/
 let isMenuOpen = false;
@@ -54,6 +55,7 @@ function paintTask(task, section) {
     inputPercent.type = 'range';
     inputPercent.dataset.taskid = task.id;//ojo que esto es un numero
     inputPercent.id = 'percent';
+    inputPercent.value = task.percent;
     btnComplete.dataset.taskid = task.id;
     btnComplete.innerText = 'COMPLETE';
 
@@ -103,8 +105,7 @@ function updatePercent(event) {
     let task = findById(event.target.dataset.taskid);
     let pPercent = document.querySelector('#percent' + task.id);
     task.percent = event.target.value;
-
-
+    pPercent.innerText = event.target.value + '%';
 }
 
 
