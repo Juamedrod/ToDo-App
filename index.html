@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo App</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="./images/favicon.ico.ico" type="image/x-icon">
     <script src="js/model.js"></script>
 </head>
 
@@ -37,14 +38,40 @@
     <main>
         <div class="wrapper">
             <section class="tasks">
-                <article class="task">
-                    <i class="fas fa-circle"></i>
-                    <h3>Título task</h3>
-
-                    <i class="fas fa-trash-alt"></i>
-
+                <article>
+                    <div class="task">
+                        <i class="fas fa-circle"></i>
+                        <h3>Estudiar JS todos los dias durante 5 años</h3>
+                        <p>0% </p>
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div class="description">
+                        <p>Debo estudiar durante todos los dias que me queden de vida como usar bien javaScript y hacer
+                            de esto mi profesión.</p>
+                        <input type="range" id="percent">
+                        <button>COMPLETE</button>
+                    </div>
                 </article>
+
+                <article>
+                    <div class="task">
+                        <i class="fas fa-circle"></i>
+                        <h3>Estudiar JS todos los dias durante 5 años</h3>
+                        <p>0% </p>
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div class="description">
+                        <p>Debo estudiar durante todos los dias que me queden de vida como usar bien javaScript y hacer
+                            de esto mi profesión.</p>
+                        <input type="range" id="percent">
+                        <button>COMPLETE</button>
+                    </div>
+                </article>
+
+
             </section>
+
+
 
         </div>
     </main>
