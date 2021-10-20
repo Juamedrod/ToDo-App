@@ -6,6 +6,7 @@
 font-family: 'Rampart One', cursive; */
 :root{
     --colorPrincipal: rgb(21, 99, 163);
+    --colorSecundario: orange;
     --colorLetra:white;
     --hoverColor: rgba(240, 26, 26, 0.904);
     --fontMain: 'Nanum Myeongjo', serif;
@@ -92,6 +93,8 @@ header div nav ul li:hover a{
 
 /*** MAIN ***/
 
+
+/*TASKS*/
 main .wrapper .tasks article .task{
     display: flex;
     align-items: center;
@@ -155,8 +158,9 @@ main .wrapper .tasks article .description button{
     cursor: pointer;
 }
 
+/*FIN TASKS*/
 
-
+/*INICIO ADD*/
 
 .add {
     text-align: center;
@@ -166,15 +170,61 @@ main .wrapper .tasks article .description button{
     width: 100%;
     bottom: 0;   
     background-color: var(--colorPrincipal);
+    padding-top: 3px;
     
 }
 
+.add:hover i {
+    
+    color: red;
+    
+}
 .add i{
     cursor: pointer;
 }
 
+/*FIN ADD*/
 
+/*INICIO POP UP*/
 
+.popup{
+    display: none;  /*change to flex for visibility*/
+    flex-direction: column;        
+}
+
+.popup input, .popup select, .popup button{
+    margin: 20px; 
+    height: 50px;      
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
+    background:var(--colorSecundario);
+    border-radius: 5px;
+    border: 0.2px solid #010101;
+    color: white;
+    font-family: var(--fontMain);
+    font-weight: bold;
+    text-align: center;
+}
+
+.popup button{    
+    background:var(--colorPrincipal);
+   
+}
+
+.popup p{
+    text-align: center;
+}
+
+.popup input:nth-child(2){
+    height: 300px;
+}
+
+.popup input::placeholder{
+    color:white;
+    font-family: var(--fontMain);
+    
+}
+/*FIN POP UP*/
 
 
 
