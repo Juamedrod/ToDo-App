@@ -1,5 +1,82 @@
+@import url(reset.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;800&family=Rampart+One&display=swap');
 
 /* font-family: 'Nanum Myeongjo', serif;
 font-family: 'Rampart One', cursive; */
+:root{
+    --colorPrincipal: rgb(21, 99, 163);
+    --colorLetra:white;
+    --hoverColor: rgba(240, 26, 26, 0.904);
+}
+
+
+
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body{
+    font-family: 'Nanum Myeongjo', serif;
+    
+}
+
+.wrapper{
+    margin: 10px;
+}
+
+
+/*HEADER*/
+header{
+    background-color: var(--colorPrincipal);
+    color: var(--colorLetra);
+    padding: 3px;
+}
+
+header nav ul {
+    font-family: 'Rampart One';
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+header nav ul li a{    
+    text-decoration: none;
+    color: var(--colorLetra);
+}
+
+header>div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 200%;
+    margin-bottom: 10px;
+}
+
+header>div div{
+    cursor: pointer;
+}
+
+header>div div:hover{
+    color: var(--hoverColor);
+}
+
+header nav {
+    margin-bottom: 3px;
+}
+
+header nav ul li:hover a{    
+    color: var(--hoverColor);
+}
+/* #active{
+    
+    color: var(--hoverColor);
+} */
+/*FIN HEADER*/
