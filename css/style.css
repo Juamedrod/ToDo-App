@@ -81,4 +81,15 @@ header div nav ul li:hover a{
     
     color: var(--hoverColor);
 } */
+
+
 /*FIN HEADER*/
+
+
+/*** MAIN ***/
+
+main .wrapper .tasks .task{
+    display: flex;
+}
+
+/*** FIN MAIN ***/
