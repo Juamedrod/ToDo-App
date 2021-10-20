@@ -28,6 +28,10 @@ function paintTasks(tasks, section) {
 }
 
 
+function pintarTask(task, section) {
+
+}
+
 
 
 
