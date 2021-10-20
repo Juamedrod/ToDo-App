@@ -4,6 +4,7 @@ const btnAddTask = document.querySelector('#addTask');
 const seccionPopUp = document.querySelector('.popup');
 
 
+
 /*Global Variables*/
 let isMenuOpen = false;
 let newId = () => taskToDo.at(-1).id + 1;
@@ -12,10 +13,6 @@ let newId = () => taskToDo.at(-1).id + 1;
 /*********************/
 
 btnAddTask.addEventListener('click', toggleAddMenu);
-
-
-
-
 
 
 
@@ -40,24 +37,32 @@ function paintTask(task, section) {
     let btnComplete = document.createElement('button');
 
     h3.innerText = task.title;
+    h3.dataset.taskid = task.id;
     pPercent.innerText = task.percent + '%';
+    pPercent.id = 'percent' + task.id;
     pDescription.innerText = task.description;
     divTask.classList.add('task');
     circle.classList.add('fas');
     circle.classList.add('fa-circle');
+    circle.dataset.taskid = task.id;
+    circle.style.color = priorityMap[task.priority];
     reciclebin.className = 'fas fa-trash-alt';
     reciclebin.dataset.taskid = task.id;
     divDescription.classList.add('description');
+    divDescription.id = 'id' + task.id;
+    divDescription.style.display = 'none';
     inputPercent.type = 'range';
     inputPercent.dataset.taskid = task.id;//ojo que esto es un numero
     inputPercent.id = 'percent';
     btnComplete.dataset.taskid = task.id;
     btnComplete.innerText = 'COMPLETE';
 
-    inputPercent.addEventListener('click', updatePercent);
+    inputPercent.addEventListener('change', updatePercent);
+    btnComplete.addEventListener('click', completeTask);
     reciclebin.addEventListener('click', deleteTask);
     circle.addEventListener('click', rotatePriority);
-    h3.addEventListener('click', showDescription);
+    h3.addEventListener('click', toggleDescription);
+
 
     divTask.appendChild(circle);
     divTask.appendChild(h3);
@@ -74,27 +79,35 @@ function paintTask(task, section) {
 
 }
 
+function completeTask(event) {
 
+}
 
-function rotatePriority(event) {
-    console.log('hello3');
+function rotatePriority(event) { //click on circle increase or decrease priority for that task
+    let taskId = event.target.dataset.taskid;
+    task = findById(taskId, tasksActive);
+    newPriority = task.priority + 1 > 2 ? 0 : task.priority + 1;
+    task.priority = newPriority;
+    event.target.style.color = priorityMap[newPriority];
+
+}
+
+function toggleDescription(event) {
+    let taskId = event.target.dataset.taskid;
+    let divDescription = document.querySelector('#id' + taskId);
+    divDescription.style.display == 'none' ? divDescription.style.display = '' : divDescription.style.display = 'none';
+
 }
 
 function updatePercent(event) {
-    console.log('hello1');
+    let task = findById(event.target.dataset.taskid);
+    let pPercent = document.querySelector('#percent' + task.id);
+    task.percent = event.target.value;
+
+
 }
 
-function deleteTask(event) {
-    console.log('hello2');
-}
 
-
-
-
-
-function showDescription(event) {
-    console.log('hello4');
-}
 
 
 

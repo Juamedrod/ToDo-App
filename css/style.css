@@ -124,12 +124,12 @@ main .wrapper .tasks article .task i:last-child{
     cursor: pointer;
 }
 main .wrapper .tasks article .task i:first-child{
-    color: greenyellow;  
+    color: white;  
     cursor: pointer;  
 }
 
 main .wrapper .tasks article .description{
-    display: none;
+    
     height: auto;    
     border-bottom: 1px solid var(--colorPrincipal);
     border-left: 1px solid var(--colorPrincipal);
