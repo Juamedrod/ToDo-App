@@ -13,7 +13,7 @@ const logo = document.querySelector('.logo');
 
 /*Global Variables*/
 let isMenuOpen = false;
-let newId = () => taskToDo.at(-1).id + 1;
+let newId = () => tasksActive.at(-1).id + 1;
 
 
 /*********************/
