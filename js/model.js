@@ -8,65 +8,39 @@ const tasksActive = new Array(
     },
     {
         id: 2,
-        title: 'Estudia JS o te rajo',
+        title: 'Echar a los pajaros del jardin',
         description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
         percent: 98,
-        priority: 0
+        priority: 2
     },
     {
         id: 3,
-        title: 'Estudia JS o te rajo',
+        title: 'Sacara la basura al jardin',
         description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
         percent: 0,
-        priority: 0
+        priority: 2
     },
     {
         id: 4,
-        title: 'Estudia JS o te rajo',
+        title: 'Comprarme una ducatti o Harley Sportage',
         description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
         percent: 98,
-        priority: 0
+        priority: 1
     },
     {
         id: 5,
-        title: 'Estudia JS o te rajo',
+        title: 'Ganar la loteria y el Euromillón',
         description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
-        percent: 0,
+        percent: 2,
         priority: 0
     },
-    {
-        id: 6,
-        title: 'Estudia JS o te rajo',
-        description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
-        percent: 98,
-        priority: 0
-    },
-    {
-        id: 7,
-        title: 'Estudia JS o te rajo',
-        description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
-        percent: 0,
-        priority: 0
-    },
-    {
-        id: 8,
-        title: 'Estudia JS o te rajo',
-        description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
-        percent: 98,
-        priority: 0
-    },
+
 
 );
 
 
 const tasksCompleted = new Array(
-    {
-        id: 1,
-        title: 'Dejar los miedos atrás',
-        description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
-        percent: 100,
-        priority: 0
-    },
+
 );
 
 

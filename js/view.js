@@ -1,5 +1,6 @@
 /*HTML ELEMENT CAPTION*/
-const main = document.querySelector('main');
+const h1 = document.querySelector('h1');
+const wrapper = document.querySelector('main');
 const seccionTasks = document.querySelector('.tasks');
 const btnAddTask = document.querySelector('#addTask');
 const seccionPopUp = document.querySelector('.popup');
@@ -25,7 +26,7 @@ actives.addEventListener('click', goActives);
 completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
 
-goHome();
+/* goHome(); */
 
 function goHome() {
 
