@@ -201,7 +201,7 @@ main .wrapper .tasks article .description button{
     margin: 20px; 
     height: 50px;      
     cursor: pointer;
-    box-shadow: 2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: 2px 2px 2px #000000;
     background:var(--colorSecundario);
     border-radius: 5px;
     border: 0.2px solid #010101;
@@ -209,29 +209,54 @@ main .wrapper .tasks article .description button{
     font-family: var(--fontMain);
     font-weight: bold;
     text-align: center;
+    font-size: 150%;
+    text-shadow: 2px 2px 2px #000000;
+    
 }
 
 .popup button{    
     background:var(--colorPrincipal);
+    font-size: 150%;
+    font-family: 'Rampart One';
    
+}
+.popup select{
+    font-family: 'Rampart One';
+    text-shadow: 2px 2px 2px #000000;
+    
 }
 
 .popup p{
     text-align: center;
+    font-size: 150%;
 }
 
 .popup input:nth-child(2){
     height: 300px;
+    font-size: 150%;
 }
 
 .popup input::placeholder{
     color:white;
-    font-family: var(--fontMain);
+    font-family: 'Rampart One';
     
 }
 /*FIN POP UP*/
 
+/*INPUT SELECTOR*/
 
+select#urgency option:nth-child(2){
+    background-color: yellowgreen; 
+
+}
+
+select#urgency option:nth-child(3){
+    background-color: yellow;
+}
+
+select#urgency option:nth-child(4){
+    background-color: red;
+}
 
 
 /* PERSONALIZAR EL INPUT SLIDER*/

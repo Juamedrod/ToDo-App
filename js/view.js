@@ -8,6 +8,8 @@ const completed = document.querySelector('.nav3');
 const homeA = document.querySelector('.nav1 a');
 const activesA = document.querySelector('.nav2 a');
 const completedA = document.querySelector('.nav3 a');
+const logo = document.querySelector('.logo');
+
 
 /*Global Variables*/
 let isMenuOpen = false;
@@ -17,6 +19,7 @@ let newId = () => taskToDo.at(-1).id + 1;
 /*********************/
 /*LISTENERS*/
 home.addEventListener('click', goHome);
+logo.addEventListener('click', goHome);
 actives.addEventListener('click', goActives);
 completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
@@ -116,8 +119,11 @@ function paintTask(task, section) {
 
 }
 
-function completeTask(event) {
+function deleteTask(event) {
 
+    let id = event.target.dataset.taskid;
+    tasksActive.splice(tasksActive.findIndex(e => e.id == id), 1);//delete the task from being active
+    paintTasks(tasksActive, seccionTasks);
 }
 
 function rotatePriority(event) { //click on circle increase or decrease priority for that task

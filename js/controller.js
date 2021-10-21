@@ -1,10 +1,10 @@
 
 
 
-function deleteTask(event) {
+function completeTask(event) {
     let id = event.target.dataset.taskid;
 
-    let newTask = JSON.parse(JSON.stringify(findById(id)));//deep copy of task going to be deleted
+    let newTask = JSON.parse(JSON.stringify(findById(id)));//deep copy of task going to be completed
     newTask.id = parseInt(tasksCompleted.at(-1).id) + 1;
     tasksCompleted.push(newTask);//push of task to completed array
 
