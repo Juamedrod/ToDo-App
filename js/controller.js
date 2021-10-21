@@ -22,12 +22,16 @@ function saveTask(event) {
         percent: 0,
         priority: selectPriority.value
     }
-
-    if (isAcceptable(task) === 0) {
+    let error = isAcceptable(task);
+    console.log(error);
+    if (error === 0) {
         inputTitle.value = '';
         inputDescription.value = '';
         selectPriority.value = '';
         message.innerText = codeErrors(0);
+        tasksActive.push(task);
+    } else {
+        console.log(codeErrors());
     }
 
 
@@ -39,10 +43,11 @@ function saveTask(event) {
 function isAcceptable(task) {
     //rules of addition
     let acceptable = 0;
-    task.title == '' || task.description == '' ? acceptable = -3 : acceptable = 0;
+    console.log(task);
+    (task.title == '' || task.description == '' || selectPriority.value == '') ? acceptable = -3 : acceptable = 0;
     tasksActive.filter(e => e.title == task.title).length > 0 ? acceptable = -1 : acceptable = 0;
     tasksActive.filter(e => e.description == task.description).length > 0 ? acceptable = -2 : acceptable = 0;
-
+    return acceptable;
 
 
 }
