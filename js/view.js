@@ -1,5 +1,5 @@
 /*HTML ELEMENT CAPTION*/
-const wrapper = document.querySelector('wrapper');
+const main = document.querySelector('main');
 const seccionTasks = document.querySelector('.tasks');
 const btnAddTask = document.querySelector('#addTask');
 const seccionPopUp = document.querySelector('.popup');
@@ -25,23 +25,27 @@ actives.addEventListener('click', goActives);
 completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
 
-
+goHome();
 
 function goHome() {
+
     clearBoardHTML();
     if (isMenuOpen) toggleAddMenu();
     setAllInactive();
     homeA.id = 'active';
-    /* paintTasks(tasksActive, seccionTasks); */
+    buildHome();
+
 }
 
 function goActives() {
+    restartWrapper();
     if (isMenuOpen) toggleAddMenu();
     setAllInactive();
     activesA.id = 'active';
     paintTasks(tasksActive, seccionTasks);
 }
 function goCompleted() {
+    restartWrapper();
     if (isMenuOpen) toggleAddMenu();
     setAllInactive();
     completedA.id = 'active';

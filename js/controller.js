@@ -12,8 +12,6 @@ btnSaveTask.addEventListener('click', saveTask);
 
 
 
-
-
 function saveTask(event) {
     let task = {
         id: newId(),
@@ -34,11 +32,6 @@ function saveTask(event) {
     } else {
         message.innerText = codeErrors(error);
     }
-
-
-
-
-
 }
 
 function isAcceptable(task) {
@@ -48,8 +41,6 @@ function isAcceptable(task) {
     if (acceptable === 0) tasksActive.filter(e => e.title == task.title).length > 0 ? acceptable = -1 : acceptable = 0;
     if (acceptable === 0) tasksActive.filter(e => e.description == task.description).length > 0 ? acceptable = -2 : acceptable = 0;
     return acceptable;
-
-
 }
 
 function codeErrors(error) {//print code errors
@@ -93,3 +84,19 @@ function findById(id, list) {
     return tasksActive.find(e => e.id == id);
 }
 
+//BUILD HOME PROMPT
+
+function buildHome() {
+    let h2 = document.createElement('h2');
+    main.classList.add('bg');
+    main.style.width = '100%';
+    main.style.height = '100vh';
+    h2.innerText = 'You Know Nothing, Task Snow';
+    seccionTasks.appendChild(h2);
+}
+
+function restartWrapper() {
+    main.classList.remove('bg');
+    main.style.width = '';
+    main.style.height = '';
+}
