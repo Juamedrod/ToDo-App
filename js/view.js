@@ -160,6 +160,7 @@ function toggleAddMenu(event) {
         seccionTasks.style.display = 'none';
         seccionPopUp.style.display = 'flex';
     }
+    message.innerText = '';
     isMenuOpen = !isMenuOpen;
 }
 

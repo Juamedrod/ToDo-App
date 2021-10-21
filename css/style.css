@@ -119,6 +119,7 @@ main .wrapper .tasks article .task h3{
 
 main .wrapper .tasks article .task p{
     margin-right: 5px;
+    color: var(--colorPrincipal);
     
 }
 
