@@ -98,6 +98,13 @@ header div nav ul li:hover a{
 
 
 /*TASKS*/
+
+main .wrapper .tasks article{
+    transition: 2s;
+    opacity: 1;
+    transform: scale(1);
+}
+
 main .wrapper .tasks article .task{
     display: flex;
     align-items: center;
@@ -106,8 +113,14 @@ main .wrapper .tasks article .task{
     padding :5px;
     border: 1px solid var(--colorPrincipal);
     box-shadow:2px 2px 2px 1px var(--colorPrincipal);
-    
-    
+    min-height: 50px;    
+    transition: 1s;
+}
+
+main .wrapper .tasks article{
+    transition: 2s;
+    opacity: 1;
+    transform: scale(1);
 }
 
 main .wrapper .tasks article .task h3{
@@ -133,13 +146,13 @@ main .wrapper .tasks article .task i:first-child{
 }
 
 main .wrapper .tasks article .description{
-    
-    height: auto;    
+    overflow: hidden;
+    height: 0px;    
     border-bottom: 1px solid var(--colorPrincipal);
     border-left: 1px solid var(--colorPrincipal);
     border-right: 1px solid var(--colorPrincipal);
     box-shadow:1px 1px 1px 1px var(--colorPrincipal);
-    transition: 0.5s;
+    transition: 1s;
 }
 
 main .wrapper .tasks article .description p{
@@ -182,7 +195,7 @@ main .wrapper .tasks article .description button{
 
 .add:hover i {
     
-    color: red;
+    color: var(--hoverColor);
     
 }
 .add i{
@@ -233,7 +246,7 @@ main .wrapper .tasks article .description button{
 }
 
 .popup input:nth-child(2){
-    height: 300px;
+    height: 230px;
     font-size: 150%;
 }
 
@@ -247,16 +260,16 @@ main .wrapper .tasks article .description button{
 /*INPUT SELECTOR*/
 
 select#urgency option:nth-child(2){
-    background-color: yellowgreen; 
+    background-color: var(--priorelaxed); 
 
 }
 
 select#urgency option:nth-child(3){
-    background-color: yellow;
+    background-color: var(--prionormal);
 }
 
 select#urgency option:nth-child(4){
-    background-color: red;
+    background-color: var(--priourgente);
 }
 
 

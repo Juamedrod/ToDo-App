@@ -23,13 +23,14 @@ function saveTask(event) {
         priority: selectPriority.value
     }
     let error = isAcceptable(task);
-    console.log(error);
+
     if (error === 0) {
         inputTitle.value = '';
         inputDescription.value = '';
         selectPriority.value = '';
         message.innerText = codeErrors(0);
         tasksActive.push(task);
+        paintTasks(tasksActive, seccionTasks);
     } else {
         message.innerText = codeErrors(error);
     }
