@@ -217,7 +217,7 @@ main .wrapper .tasks article .description button{
     flex-direction: column;        
 }
 
-.popup input, .popup select, .popup button{
+.popup input, .popup select, .popup button, .popup textarea{
     margin: 20px; 
     height: 50px;      
     cursor: pointer;
@@ -251,12 +251,14 @@ main .wrapper .tasks article .description button{
     font-size: 150%;
 }
 
-.popup input:nth-child(2){
+.popup textarea{
+    resize: none;
     height: 230px;
-    font-size: 150%;
+    font-size: 150%;    
+    
 }
 
-.popup input::placeholder{
+.popup input::placeholder, .popup textarea::placeholder{
     color:white;
     font-family: 'Rampart One';
     
@@ -431,9 +433,17 @@ input[type=range] {
 
 /*FIN Personalizado de INPU SLIDER*/
 
-
-
-
-
-
 /*** FIN MAIN ***/
+
+
+
+/**MEDIAQUERIES***/
+
+@media (min-width:768px) {
+    .bg{    
+        
+        
+        height :95vh;
+    }
+    
+}
