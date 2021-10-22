@@ -5,16 +5,16 @@
 /* font-family: 'Nanum Myeongjo', serif;
 font-family: 'Rampart One', cursive; */
 :root{
-    --colorPrincipal: rgb(21, 99, 163);
-    --colorSecundario: orange;
+    --colorPrincipal:rgb(21, 99, 163);
+    --colorSecundario:orange;
     --colorLetra:white;
-    --hoverColor: rgba(240, 26, 26, 0.904);
-    --fontMain: 'Nanum Myeongjo', serif;
+    --hoverColor:rgba(240, 26, 26, 0.904);
+    --fontMain:'Nanum Myeongjo', serif;
     --fontSecond:'Rampart One',serif;
-    --priourgente: red;
+    --priourgente:red;
     --prionormal:yellow;
     --priorelaxed:green;
-    --fontSize: 16px;
+    --fontSize:16px;
     
 }
 

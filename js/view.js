@@ -58,6 +58,7 @@ function goSettings() {
     restartWrapper();
     clearBoardHTML();
     if (isMenuOpen) toggleAddMenu();
+    settings.resetSettings();
     settings.showSettings(seccionTasks);
 
 }

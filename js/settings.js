@@ -52,21 +52,21 @@ class Settings {
             <div class="flex">
                 <select id="fontMain">
                     <option value="">Main Font Selection</option>
-                    <option value="'Nanum Myeongjo', serif;" style="font-family: 'Nanum Myeongjo', serif;">Nanum
+                    <option value="Nanum Myeongjo, serif" style="font-family: 'Nanum Myeongjo', serif;">Nanum
                         Myeongjo</option>
-                    <option value="'Rampart One',serif;" style="font-family: 'Rampart One',serif;">Rampart One
+                    <option value="Rampart One" style="font-family: 'Rampart One',serif;">Rampart One
                     </option>
-                    <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
-                        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Segoe UI</option>
+                    <option value="Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
+                        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
                 </select>
 
                 <select id="fontSecond">
                     <option value="">Secondary Font Selection</option>
-                    <option value="'Nanum Myeongjo', serif;" style="font-family: 'Nanum Myeongjo', serif;">Nanum
+                    <option value="Nanum Myeongjo, serif" style="font-family: 'Nanum Myeongjo', serif;">Nanum
                         Myeongjo</option>
-                    <option value="'Rampart One',serif;" style="font-family: 'Rampart One',serif;">Rampart One
+                    <option value="Rampart One,serif" style="font-family: 'Rampart One',serif;">Rampart One
                     </option>
-                    <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                    <option value="Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
                         style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Segoe UI</option>
                 </select>
             </div>
@@ -76,6 +76,15 @@ class Settings {
         </article>
         
         `;
+        document.querySelector('#mainColor').addEventListener('change', (event) => this.setMainColor(event));
+        document.querySelector('#secColor').addEventListener('change', (event) => this.setsecColor(event));
+        document.querySelector('#fontColor').addEventListener('change', (event) => this.setfontColor(event));
+        document.querySelector('#hovercolor').addEventListener('change', (event) => this.sethovercolor(event));
+        document.querySelector('#priourgente').addEventListener('change', (event) => this.setpriourgente(event));
+        document.querySelector('#prionormal').addEventListener('change', (event) => this.setprionormal(event));
+        document.querySelector('#priorelaxed').addEventListener('change', (event) => this.setpriorelaxed(event));
+        document.querySelector('#fontMain').addEventListener('change', (event) => this.setfontMain(event));
+        document.querySelector('#fontSecond').addEventListener('change', (event) => this.setfontSecond(event));
 
 
     }
@@ -93,49 +102,51 @@ class Settings {
     }
 
     setMainColor(event) {
-        this.root.style.setProperty('--colorPrincipal', mainColor);
-        this.mainColor = mainColor;
+        this.root.style.setProperty('--colorPrincipal', event.target.value);
+        this.mainColor = event.target.value;
     }
 
-    setsecColor(secColor) {
-        this.root.style.setProperty('--colorSecundario', secColor);
-        this.secColor = secColor;
+    setsecColor(event) {
+        this.root.style.setProperty('--colorSecundario', event.target.value);
+        this.secColor = event.target.value;
     }
 
-    setcolorLetra(fontColor) {
-        this.root.style.setProperty('--colorLetra', fontColor);
-        this.fontColor = fontColor;
+    setfontColor(event) {
+        this.root.style.setProperty('--colorLetra', event.target.value);
+        this.fontColor = event.target.value;
 
     }
 
-    sethovercolor(hovercolor) {
-        this.root.style.setProperty('--hoverColor', hovercolor);
-        this.hovercolor = hovercolor;
+    sethovercolor(event) {
+        this.root.style.setProperty('--hoverColor', event.target.value);
+        this.hovercolor = event.target.value;
     }
 
-    setfontMain(fontMain) {
-        this.root.style.setProperty('--fontMain', fontMain);
-        this.fontMain = fontMain;
+    setfontMain(event) {
+        console.log(event.target.value)
+        this.root.style.setProperty('--fontMain', event.target.value.replace(`'`, `\"`));
+        console.log(getComputedStyle(document.documentElement).getPropertyValue('--fontMain'));
+        this.fontMain = event.target.value;
     }
 
-    setfontSecond(fontSecond) {
-        this.root.style.setProperty('--fontSecond', fontSecond);
-        this.fontSecond = fontSecond;
+    setfontSecond(event) {
+        this.root.style.setProperty('--fontSecond', event.target.value);
+        this.fontSecond = event.target.value;
     }
 
-    setpriourgente(fontSecond) {
-        this.root.style.setProperty('--priourgente', priourgente);
-        this.priourgente = priourgente;
+    setpriourgente(event) {
+        this.root.style.setProperty('--priourgente', event.target.value);
+        this.priourgente = event.target.value;
     }
 
-    setprionormal(prionormal) {
-        this.root.style.setProperty('--prionormal', prionormal);
-        this.prionormal = prionormal;
+    setprionormal(event) {
+        this.root.style.setProperty('--prionormal', event.target.value);
+        this.prionormal = event.target.value;
     }
 
-    setpriorelaxed(priorelaxed) {
-        this.root.style.setProperty('--priorelaxed', priorelaxed);
-        this.priorelaxed = priorelaxed;
+    setpriorelaxed(event) {
+        this.root.style.setProperty('--priorelaxed', event.target.value);
+        this.priorelaxed = event.target.value;
     }
 
 }
