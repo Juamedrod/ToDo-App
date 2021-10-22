@@ -1,5 +1,6 @@
 class Settings {
-    constructor(mainColor, secColor, fontColor, hovercolor, fontMain = "'Nanum Myeongjo', serif", fontSecond = "'Rampart One',serif", priourgente, prionormal, priorelaxed, fontSize) {
+
+    constructor(mainColor, secColor, fontColor, hovercolor, fontMain = "Nanum Myeongjo", fontSecond = "Rampart One", priourgente, prionormal, priorelaxed, fontSize) {
 
         this.mainColor = mainColor,
             this.secColor = secColor,
@@ -10,8 +11,42 @@ class Settings {
             this.priourgente = priourgente,
             this.prionormal = prionormal,
             this.priorelaxed = priorelaxed,
-            this.root = document.querySelector(':root');
+            this.root = document.querySelector(':root')
 
+    }
+
+    jsonify() {
+        return JSON.stringify(this);
+    }
+
+    saveToLocalStorage() {
+        localStorage.setItem('lsSettings', this.jsonify());
+    }
+
+    defaultSettings() {
+        let defaultSetts = JSON.parse('{"mainColor":"#1563a3","secColor":"#ffa500","fontColor":"#ffffff","hovercolor":"#f01a1a","fontMain":"Nanum Myeongjo","fontSecond":"Rampart One","priourgente":"#ff0000","prionormal":"#c4ec13","priorelaxed":"#00ff00"}');
+
+        this.mainColor = defaultSetts.mainColor
+        this.secColor = defaultSetts.secColor
+        this.fontColor = defaultSetts.fontColor
+        this.hovercolor = defaultSetts.hovercolor
+        this.fontMain = defaultSetts.fontMain
+        this.fontSecond = defaultSetts.fontSecond
+        this.priourgente = defaultSetts.priourgente
+        this.prionormal = defaultSetts.prionormal
+        this.priorelaxed = defaultSetts.priorelaxed
+
+        this.root.style.setProperty('--colorPrincipal', defaultSetts.mainColor);
+        this.root.style.setProperty('--colorSecundario', defaultSetts.secColor);
+        this.root.style.setProperty('--colorLetra', defaultSetts.fontColor);
+        this.root.style.setProperty('--hoverColor', defaultSetts.hovercolor);
+        this.root.style.setProperty('--fontMain', defaultSetts.fontMain);
+        this.root.style.setProperty('--fontSecond', defaultSetts.fontSecond);
+        this.root.style.setProperty('--priourgente', defaultSetts.priourgente);
+        this.root.style.setProperty('--prionormal', defaultSetts.prionormal);
+        this.root.style.setProperty('--priorelaxed', defaultSetts.priorelaxed);
+        this.saveToLocalStorage();
+        this.updateActualValues();
     }
 
     showSettings(section) {
@@ -74,6 +109,7 @@ class Settings {
 
             </select>
         </article>
+        <div class="resetDiv"><button id="resetSettings">RESET</button></div>
         
         `;
 
@@ -86,7 +122,7 @@ class Settings {
         let prioRelax = document.querySelector('#priorelaxed');
         let fontMain = document.querySelector('#fontMain');
         let fontSecond = document.querySelector('#fontSecond');
-
+        let btnReset = document.querySelector('.resetDiv #resetSettings');
 
         mainCol.addEventListener('change', (event) => this.setMainColor(event));
         secCol.addEventListener('change', (event) => this.setsecColor(event));
@@ -97,8 +133,8 @@ class Settings {
         prioRelax.addEventListener('change', (event) => this.setpriorelaxed(event));
         fontMain.addEventListener('change', (event) => this.setfontMain(event));
         fontSecond.addEventListener('change', (event) => this.setfontSecond(event));
+        btnReset.addEventListener('click', (event) => this.defaultSettings(event));
 
-        this.updateActualValues();
 
     }
 
@@ -123,63 +159,96 @@ class Settings {
     }
 
     resetSettings() {
-        this.mainColor = getComputedStyle(document.documentElement).getPropertyValue('--colorPrincipal'),
-            this.secColor = getComputedStyle(document.documentElement).getPropertyValue('--colorSecundario'),
-            this.fontColor = getComputedStyle(document.documentElement).getPropertyValue('--colorLetra'),
-            this.hovercolor = getComputedStyle(document.documentElement).getPropertyValue('--hoverColor'),
-            this.fontMain = getComputedStyle(document.documentElement).getPropertyValue('--fontMain'),
-            this.fontSecond = getComputedStyle(document.documentElement).getPropertyValue('--fontSecond'),
-            this.priourgente = getComputedStyle(document.documentElement).getPropertyValue('--priourgente'),
-            this.prionormal = getComputedStyle(document.documentElement).getPropertyValue('--prionormal'),
-            this.priorelaxed = getComputedStyle(document.documentElement).getPropertyValue('--priorelaxed')
+
+        this.mainColor = getComputedStyle(document.documentElement).getPropertyValue('--colorPrincipal');
+        this.secColor = getComputedStyle(document.documentElement).getPropertyValue('--colorSecundario');
+        this.fontColor = getComputedStyle(document.documentElement).getPropertyValue('--colorLetra');
+        this.hovercolor = getComputedStyle(document.documentElement).getPropertyValue('--hoverColor');
+        this.fontMain = getComputedStyle(document.documentElement).getPropertyValue('--fontMain');
+        this.fontSecond = getComputedStyle(document.documentElement).getPropertyValue('--fontSecond');
+        this.priourgente = getComputedStyle(document.documentElement).getPropertyValue('--priourgente');
+        this.prionormal = getComputedStyle(document.documentElement).getPropertyValue('--prionormal');
+        this.priorelaxed = getComputedStyle(document.documentElement).getPropertyValue('--priorelaxed');
+        this.updateActualValues();
     }
 
     setMainColor(event) {
         this.root.style.setProperty('--colorPrincipal', event.target.value);
         this.mainColor = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setsecColor(event) {
         this.root.style.setProperty('--colorSecundario', event.target.value);
         this.secColor = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setfontColor(event) {
         this.root.style.setProperty('--colorLetra', event.target.value);
         this.fontColor = event.target.value;
-
+        this.saveToLocalStorage();
     }
 
     sethovercolor(event) {
         this.root.style.setProperty('--hoverColor', event.target.value);
         this.hovercolor = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setfontMain(event) {
-        console.log(event.target.value)
         this.root.style.setProperty('--fontMain', event.target.value.replace(`'`, `\"`));
-        console.log(getComputedStyle(document.documentElement).getPropertyValue('--fontMain'));
         this.fontMain = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setfontSecond(event) {
         this.root.style.setProperty('--fontSecond', event.target.value);
         this.fontSecond = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setpriourgente(event) {
         this.root.style.setProperty('--priourgente', event.target.value);
         this.priourgente = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setprionormal(event) {
         this.root.style.setProperty('--prionormal', event.target.value);
         this.prionormal = event.target.value;
+        this.saveToLocalStorage();
     }
 
     setpriorelaxed(event) {
         this.root.style.setProperty('--priorelaxed', event.target.value);
         this.priorelaxed = event.target.value;
+        this.saveToLocalStorage();
+    }
+
+    loadFromJson(dataObject) {
+
+        this.mainColor = dataObject.mainColor
+        this.secColor = dataObject.secColor
+        this.fontColor = dataObject.fontColor
+        this.hovercolor = dataObject.hovercolor
+        this.fontMain = dataObject.fontMain
+        this.fontSecond = dataObject.fontSecond
+        this.priourgente = dataObject.priourgente
+        this.prionormal = dataObject.prionormal
+        this.priorelaxed = dataObject.priorelaxed
+
+        this.root.style.setProperty('--colorPrincipal', dataObject.mainColor);
+        this.root.style.setProperty('--colorSecundario', dataObject.secColor);
+        this.root.style.setProperty('--colorLetra', dataObject.fontColor);
+        this.root.style.setProperty('--hoverColor', dataObject.hovercolor);
+        this.root.style.setProperty('--fontMain', dataObject.fontMain);
+        this.root.style.setProperty('--fontSecond', dataObject.fontSecond);
+        this.root.style.setProperty('--priourgente', dataObject.priourgente);
+        this.root.style.setProperty('--prionormal', dataObject.prionormal);
+        this.root.style.setProperty('--priorelaxed', dataObject.priorelaxed);
+
+
     }
 
 }

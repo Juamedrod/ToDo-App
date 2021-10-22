@@ -27,16 +27,20 @@ completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
 burguer.addEventListener('click', goSettings);
 
-goHome()
+startApp();//Function that start it all, and keep electrons moving.
+
+function startApp() {
+    fetchFromLocalStorage();
+    goHome();
+}
+
 
 function goHome() {
-
     clearBoardHTML();
     if (isMenuOpen) toggleAddMenu();
     setAllInactive();
     homeA.id = 'active';
     buildHome();
-
 }
 
 function goActives() {
@@ -58,8 +62,8 @@ function goSettings() {
     restartWrapper();
     clearBoardHTML();
     if (isMenuOpen) toggleAddMenu();
-    settings.resetSettings();
     settings.showSettings(seccionTasks);
+    settings.resetSettings();
 
 }
 
@@ -69,8 +73,6 @@ function setAllInactive() {
     completedA.id = '';
 
 }
-
-
 
 function paintTasks(tasks, section) {
     clearBoardHTML();

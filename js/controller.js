@@ -107,3 +107,22 @@ function restartWrapper() {
     main.style.width = '';
     main.style.height = '';
 }
+
+
+
+/***SAVE AND LOAD ***/
+
+function fetchFromLocalStorage() {
+    let lsSettings = localStorage.getItem('lsSettings');
+    if (lsSettings === null) {
+        return;
+    } else {
+        settings.loadFromJson(JSON.parse(lsSettings));
+
+    }
+
+}
+
+function saveTasksToLocalStorage(list, key) {
+    localStorage.setItem(key, JSON.stringify(list));
+}
