@@ -1,5 +1,6 @@
 class Settings {
     constructor(mainColor, secColor, fontColor, hovercolor, fontMain = "'Nanum Myeongjo', serif", fontSecond = "'Rampart One',serif", priourgente, prionormal, priorelaxed, fontSize) {
+
         this.mainColor = mainColor,
             this.secColor = secColor,
             this.fontColor = fontColor,
@@ -9,8 +10,7 @@ class Settings {
             this.priourgente = priourgente,
             this.prionormal = prionormal,
             this.priorelaxed = priorelaxed,
-            this.fontSize = fontSize
-        this.root = document.querySelector(':root');
+            this.root = document.querySelector(':root');
 
     }
 
@@ -61,10 +61,7 @@ class Settings {
         this.priorelaxed = priorelaxed;
     }
 
-    setfontSize(fontSize) {
-        this.root.style.setProperty('--fontSize', fontSize);
-        this.fontSize = fontSize;
-    }
+
 
 
 }

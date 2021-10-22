@@ -11,7 +11,7 @@ const homeA = document.querySelector('.nav1 a');
 const activesA = document.querySelector('.nav2 a');
 const completedA = document.querySelector('.nav3 a');
 const logo = document.querySelector('.logo');
-
+const burguer = document.querySelector('.burguer');
 
 /*Global Variables*/
 let isMenuOpen = false;
@@ -25,8 +25,9 @@ logo.addEventListener('click', goHome);
 actives.addEventListener('click', goActives);
 completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
+burguer.addEventListener('click', goSettings);
 
-goHome();
+// goHome(); //Mientras testeo la pantalla de settings, esto está inactivo, reactivar al acabar
 
 function goHome() {
 
@@ -54,6 +55,9 @@ function goCompleted() {
 }
 
 function goSettings() {
+    restartWrapper();
+    clearBoardHTML();
+    if (isMenuOpen) toggleAddMenu();
 
 }
 
@@ -67,14 +71,14 @@ function setAllInactive() {
 
 
 function paintTasks(tasks, section) {
-    section.innerHTML = '';
+    clearBoardHTML();
     tasks.forEach(task => {
         paintTask(task, section);
     });
 }
 
 function paintTasksCompleted(tasks, section) {
-    section.innerHTML = '';
+    clearBoardHTML();
     tasks.forEach(task => {
         paintTaskCompleted(task, section);
     });

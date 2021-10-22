@@ -15,6 +15,7 @@ font-family: 'Rampart One', cursive; */
     --prionormal:yellow;
     --priorelaxed:green;
     --fontSize: 16px;
+    
 }
 
 *{
@@ -302,6 +303,34 @@ main .tasks h2{
     color : var(--colorPrincipal);
 }
 
+/***START SETTINGS*****/
+.tasks #settings h3{
+    font-family: var(--fontSecond);
+    margin:10px auto 15px auto;
+    text-align: center;
+    font-size: 135%;
+    text-shadow: 2px 2px 2px var(--colorPrincipal);
+    text-decoration: underline;
+}
+
+
+.tasks #settings .option {
+    
+    text-shadow: 1px 1px 2px black, 0 0 1em var(--colorPrincipal), 0 0 0.2em var(--colorPrincipal);
+    margin: 10px;
+    
+}
+
+.tasks #settings .option input{
+    min-height:20px ;
+    width: 30%;
+    
+}
+
+.tasks #settings .option label{
+    padding-left: 5px;
+    
+}
 
 
 

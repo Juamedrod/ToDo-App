@@ -1,3 +1,7 @@
+
+const tasksCompleted = new Array();
+const priorityMap = ['red', 'yellow', 'yellowgreen'];
+
 const tasksActive = new Array(
     {
         id: 1,
@@ -39,9 +43,18 @@ const tasksActive = new Array(
 );
 
 
-const tasksCompleted = new Array(
-
-);
 
 
-const priorityMap = ['red', 'yellow', 'yellowgreen'];
+
+/************ TASK PROTOTYPE **************************/
+
+/*
+    {
+        id: 5,
+        title: 'Ganar la loteria y el Euromillón',
+        description: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo tempore explicabo quo in perferendis ut, asperiores sint. Fuga, corrupti?",
+        percent: 2,
+        priority: 0
+    },
+
+*/
