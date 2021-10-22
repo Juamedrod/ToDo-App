@@ -53,6 +53,10 @@ function goCompleted() {
     paintTasksCompleted(tasksCompleted, seccionTasks);
 }
 
+function goSettings() {
+
+}
+
 function setAllInactive() {
     homeA.id = '';
     activesA.id = '';
