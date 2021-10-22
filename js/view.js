@@ -15,7 +15,7 @@ const logo = document.querySelector('.logo');
 
 /*Global Variables*/
 let isMenuOpen = false;
-let newId = () => tasksActive.at(-1).id + 1;
+let newId = () => (tasksActive.length > 0) ? tasksActive.at(-1).id + 1 : 1;
 
 
 /*********************/
@@ -26,7 +26,7 @@ actives.addEventListener('click', goActives);
 completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
 
-/* goHome(); */
+goHome();
 
 function goHome() {
 
