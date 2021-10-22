@@ -16,7 +16,7 @@ const burguer = document.querySelector('.burguer');
 /*Global Variables*/
 let isMenuOpen = false;
 let newId = () => (tasksActive.length > 0) ? tasksActive.at(-1).id + 1 : 1;
-
+let settings = new Settings()
 
 /*********************/
 /*LISTENERS*/
@@ -58,6 +58,7 @@ function goSettings() {
     restartWrapper();
     clearBoardHTML();
     if (isMenuOpen) toggleAddMenu();
+    settings.showSettings(seccionTasks);
 
 }
 
