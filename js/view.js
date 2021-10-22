@@ -30,7 +30,12 @@ burguer.addEventListener('click', goSettings);
 startApp();//Function that start it all, and keep electrons moving.
 
 function startApp() {
-    fetchFromLocalStorage();
+    fetchFromLocalStorage();//Settings stored in localStorage is injected into the app
+    let lsActives = retrieveTasksFromLocalStorage('tasksActive');/*retrieve all datafrom local store and inject it*/
+    lsActives === null ? tasksActive : tasksActive = lsActives;
+    let lsCompleted = retrieveTasksFromLocalStorage('tasksCompleted');
+    lsCompleted === null ? tasksCompleted : tasksCompleted = lsCompleted;
+
     goHome();
 }
 
@@ -186,6 +191,7 @@ function deleteTask(event) {
 
     let id = event.target.dataset.taskid;
     tasksActive.splice(tasksActive.findIndex(e => e.id == id), 1);//delete the task from being active
+    saveTasksToLocalStorage(tasksActive, 'tasksActive');//save to local storage
     let article = document.querySelector(`#percent${id}`).parentNode.parentNode;
     article.style.transform = 'scale(0.2)';
     article.style.marginRight = '300px';
@@ -201,6 +207,7 @@ function rotatePriority(event) { //click on circle increase or decrease priority
     newPriority = task.priority + 1 > 2 ? 0 : task.priority + 1;
     task.priority = newPriority;
     event.target.style.color = priorityMap[newPriority];
+    saveTasksToLocalStorage(tasksActive, 'tasksActive');//save to local storage
 
 }
 
@@ -221,6 +228,7 @@ function updatePercent(event) {// update percent value via the input slider
     let pPercent = document.querySelector('#percent' + task.id);
     task.percent = event.target.value;
     pPercent.innerText = event.target.value + '%';
+    saveTasksToLocalStorage(tasksActive, 'tasksActive');//save to local storage
 }
 
 

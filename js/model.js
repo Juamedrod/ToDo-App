@@ -1,8 +1,8 @@
 
-const tasksCompleted = new Array();
+let tasksCompleted = new Array();
 const priorityMap = ['var(--priourgente)', 'var(--prionormal)', 'var(--priorelaxed)'];
 
-const tasksActive = new Array(
+let tasksActive = new Array(
     {
         id: 1,
         title: 'Estudia JS o te rajo',

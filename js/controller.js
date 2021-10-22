@@ -10,24 +10,23 @@ const message = document.querySelector('.popup #message');
 
 btnSaveTask.addEventListener('click', saveTask);
 
-
-
 function saveTask(event) {
-    let task = {
+    let task = {//input fetching values for the possible new task
         id: newId(),
         title: inputTitle.value,
         description: inputDescription.value,
         percent: 0,
         priority: selectPriority.value
     }
-    let error = isAcceptable(task);
+    let error = isAcceptable(task);//this new possible task meet the requeriments?
 
     if (error === 0) {
         inputTitle.value = '';
         inputDescription.value = '';
         selectPriority.value = '';
-        message.innerText = codeErrors(0);
-        tasksActive.push(task);
+        message.innerText = codeErrors(error);//error mapping to show correct error msg
+        tasksActive.push(task);//push the new item to the array
+        saveTasksToLocalStorage(tasksActive, 'tasksActive');//save to local storage
         paintTasks(tasksActive, seccionTasks);
     } else {
         message.innerText = codeErrors(error);
@@ -78,9 +77,12 @@ function completeTask(event) {
     } else {
         newTask.id = 1;
     }
+    if (tasksCompleted.length > 9) tasksCompleted.splice(0, 1);
     tasksCompleted.push(newTask);//push of task to completed array
+    saveTasksToLocalStorage(tasksCompleted, 'tasksCompleted');//save tasksCompleted to local storage
 
     tasksActive.splice(tasksActive.findIndex(e => e.id == id), 1);//delete the task from being active
+    saveTasksToLocalStorage(tasksActive, 'tasksActive');//save to local storage
     paintTasks(tasksActive, seccionTasks);
 }
 
@@ -118,11 +120,14 @@ function fetchFromLocalStorage() {
         return;
     } else {
         settings.loadFromJson(JSON.parse(lsSettings));
-
     }
 
 }
 
 function saveTasksToLocalStorage(list, key) {
     localStorage.setItem(key, JSON.stringify(list));
+}
+
+function retrieveTasksFromLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
 }
