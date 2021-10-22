@@ -92,17 +92,18 @@ function findById(id, list) {
 
 function buildHome() {
     let h2 = document.createElement('h2');
-    wrapper.classList.add('bg');
-    wrapper.style.width = '100%';
-    wrapper.style.height = '90vh';
+    main.classList.add('bg');
 
     h2.innerText = 'You Know Nothing, Task Snow';
     seccionTasks.appendChild(h2);
-    window.scrollTo(0, 0);
+
+    /* setTimeout(() => {  //Navigate to the top of the scroll & timeout is there for bypass load times issues
+        window.scrollTo(0, 0);
+    }, 1); */
 }
 
 function restartWrapper() {
-    wrapper.classList.remove('bg');
-    wrapper.style.width = '';
-    wrapper.style.height = '';
+    main.classList.remove('bg');
+    main.style.width = '';
+    main.style.height = '';
 }

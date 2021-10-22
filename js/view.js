@@ -1,6 +1,6 @@
 /*HTML ELEMENT CAPTION*/
 const h1 = document.querySelector('h1');
-const wrapper = document.querySelector('main');
+const main = document.querySelector('main');
 const seccionTasks = document.querySelector('.tasks');
 const btnAddTask = document.querySelector('#addTask');
 const seccionPopUp = document.querySelector('.popup');
