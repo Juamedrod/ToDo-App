@@ -27,7 +27,7 @@ completed.addEventListener('click', goCompleted);
 btnAddTask.addEventListener('click', toggleAddMenu);
 burguer.addEventListener('click', goSettings);
 
-// goHome(); //Mientras testeo la pantalla de settings, esto está inactivo, reactivar al acabar
+goHome()
 
 function goHome() {
 

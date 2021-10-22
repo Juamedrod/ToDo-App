@@ -76,17 +76,50 @@ class Settings {
         </article>
         
         `;
-        document.querySelector('#mainColor').addEventListener('change', (event) => this.setMainColor(event));
-        document.querySelector('#secColor').addEventListener('change', (event) => this.setsecColor(event));
-        document.querySelector('#fontColor').addEventListener('change', (event) => this.setfontColor(event));
-        document.querySelector('#hovercolor').addEventListener('change', (event) => this.sethovercolor(event));
-        document.querySelector('#priourgente').addEventListener('change', (event) => this.setpriourgente(event));
-        document.querySelector('#prionormal').addEventListener('change', (event) => this.setprionormal(event));
-        document.querySelector('#priorelaxed').addEventListener('change', (event) => this.setpriorelaxed(event));
-        document.querySelector('#fontMain').addEventListener('change', (event) => this.setfontMain(event));
-        document.querySelector('#fontSecond').addEventListener('change', (event) => this.setfontSecond(event));
+
+        let mainCol = document.querySelector('#mainColor');
+        let secCol = document.querySelector('#secColor');
+        let fontColor = document.querySelector('#fontColor');
+        let hoverColor = document.querySelector('#hovercolor');
+        let prioUrgen = document.querySelector('#priourgente');
+        let prioNormal = document.querySelector('#prionormal');
+        let prioRelax = document.querySelector('#priorelaxed');
+        let fontMain = document.querySelector('#fontMain');
+        let fontSecond = document.querySelector('#fontSecond');
 
 
+        mainCol.addEventListener('change', (event) => this.setMainColor(event));
+        secCol.addEventListener('change', (event) => this.setsecColor(event));
+        fontColor.addEventListener('change', (event) => this.setfontColor(event));
+        hoverColor.addEventListener('change', (event) => this.sethovercolor(event));
+        prioUrgen.addEventListener('change', (event) => this.setpriourgente(event));
+        prioNormal.addEventListener('change', (event) => this.setprionormal(event));
+        prioRelax.addEventListener('change', (event) => this.setpriorelaxed(event));
+        fontMain.addEventListener('change', (event) => this.setfontMain(event));
+        fontSecond.addEventListener('change', (event) => this.setfontSecond(event));
+
+        this.updateActualValues();
+
+    }
+
+    updateActualValues() {
+        let mainCol = document.querySelector('#mainColor');
+        let secCol = document.querySelector('#secColor');
+        let fontColor = document.querySelector('#fontColor');
+        let hoverColor = document.querySelector('#hovercolor');
+        let prioUrgen = document.querySelector('#priourgente');
+        let prioNormal = document.querySelector('#prionormal');
+        let prioRelax = document.querySelector('#priorelaxed');
+        let fontMain = document.querySelector('#fontMain');
+        let fontSecond = document.querySelector('#fontSecond');
+
+        mainCol.value = this.mainColor;
+        secCol.value = this.secColor;
+        fontColor.value = this.fontColor;
+        hoverColor.value = this.hovercolor;
+        prioUrgen.value = this.priourgente;
+        prioNormal.value = this.prionormal;
+        prioRelax.value = this.priorelaxed;
     }
 
     resetSettings() {

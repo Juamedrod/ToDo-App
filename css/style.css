@@ -5,15 +5,15 @@
 /* font-family: 'Nanum Myeongjo', serif;
 font-family: 'Rampart One', cursive; */
 :root{
-    --colorPrincipal:rgb(21, 99, 163);
-    --colorSecundario:orange;
-    --colorLetra:white;
-    --hoverColor:rgba(240, 26, 26, 0.904);
+    --colorPrincipal:#1563a3;
+    --colorSecundario:#ffa500;
+    --colorLetra:#ffffff;
+    --hoverColor:#f01a1a;
     --fontMain:'Nanum Myeongjo', serif;
     --fontSecond:'Rampart One',serif;
-    --priourgente:red;
-    --prionormal:yellow;
-    --priorelaxed:green;
+    --priourgente:#ff0000;
+    --prionormal:#c4ec13;
+    --priorelaxed:#00ff00;
     --fontSize:16px;
     
 }

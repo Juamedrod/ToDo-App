@@ -1,6 +1,6 @@
 
 const tasksCompleted = new Array();
-const priorityMap = ['red', 'yellow', 'yellowgreen'];
+const priorityMap = ['var(--priourgente)', 'var(--prionormal)', 'var(--priorelaxed)'];
 
 const tasksActive = new Array(
     {
