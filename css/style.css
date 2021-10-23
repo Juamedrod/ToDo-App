@@ -253,7 +253,7 @@ main .wrapper .tasks article .description button{
 
 .popup textarea{
     resize: none;
-    height: 230px;
+    height: 150px;
     font-size: 150%;    
     
 }
@@ -265,7 +265,7 @@ main .wrapper .tasks article .description button{
 }
 /*FIN POP UP*/
 
-/*INPUT SELECTOR*/
+/*INPUT PRIORITY SELECTOR*/
 
 select#urgency option:nth-child(2){
     background-color: var(--priorelaxed); 
