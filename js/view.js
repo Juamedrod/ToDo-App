@@ -12,6 +12,7 @@ const activesA = document.querySelector('.nav2 a');
 const completedA = document.querySelector('.nav3 a');
 const logo = document.querySelector('.logo');
 const burguer = document.querySelector('.burguer');
+const filters = document.querySelector('.add #filters');
 
 /*Global Variables*/
 let isMenuOpen = false;
@@ -45,6 +46,7 @@ function goHome() {
     if (isMenuOpen) toggleAddMenu();
     setAllInactive();
     homeA.id = 'active';
+    hideFilters();
     buildHome();
 }
 
@@ -53,7 +55,9 @@ function goActives() {
     if (isMenuOpen) toggleAddMenu();
     setAllInactive();
     activesA.id = 'active';
+    filters.style.display = 'flex';
     paintTasks(tasksActive, seccionTasks);
+    showFilters();
 }
 function goCompleted() {
     restartWrapper();
@@ -61,6 +65,7 @@ function goCompleted() {
     setAllInactive();
     completedA.id = 'active';
     paintTasksCompleted(tasksCompleted, seccionTasks);
+    hideFilters();
 }
 
 function goSettings() {
@@ -69,7 +74,7 @@ function goSettings() {
     if (isMenuOpen) toggleAddMenu();
     settings.showSettings(seccionTasks);
     settings.resetSettings();
-
+    hideFilters();
 }
 
 function setAllInactive() {
@@ -238,9 +243,11 @@ function toggleAddMenu(event) {
     if (isMenuOpen) {
         seccionTasks.style.display = '';
         seccionPopUp.style.display = 'none';
+        showFilters();
     } else {
         seccionTasks.style.display = 'none';
         seccionPopUp.style.display = 'flex';
+        hideFilters();
     }
     message.innerText = '';
     isMenuOpen = !isMenuOpen;
@@ -248,11 +255,16 @@ function toggleAddMenu(event) {
 
 function clearBoardHTML() {
     seccionTasks.innerHTML = '';
+
 }
 
+function hideFilters() {
+    filters.style.display = 'none';
+}
 
-
-
+function showFilters() {
+    filters.style.display = 'flex';
+}
 
 
 

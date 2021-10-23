@@ -5,10 +5,44 @@ const inputTitle = document.querySelector('.popup #title');
 const inputDescription = document.querySelector('.popup #description');
 const selectPriority = document.querySelector('.popup #urgency');
 const message = document.querySelector('.popup #message');
+const iFilter = document.querySelector('.add #filters i');
+const inputFilter = document.querySelector('.add #filters input');
 
 /***LISTENERS */
-
+iFilter.addEventListener('click', filterByPriority);
+inputFilter.addEventListener('input', filterByDescription);
 btnSaveTask.addEventListener('click', saveTask);
+
+
+function filterByPriority(event) {
+
+    let newPriority = parseInt(event.target.dataset.priority);
+    (newPriority + 1 > 3) ? newPriority = 0 : newPriority++;
+    event.target.style.color = priorityMap[newPriority];
+    event.target.dataset.priority = newPriority.toString();
+    if (newPriority == 3) {
+        event.target.style.color = 'white';
+        return paintTasks(tasksActive, seccionTasks);
+    }
+    const filteredArray = tasksActive.filter(task => task.priority === newPriority);
+    paintTasks(filteredArray, seccionTasks);
+}
+
+
+function filterByDescription(event) {
+
+    event.target.style.color = 'red';
+    const filteredArray = tasksActive.filter(task => {
+
+        if (task.title.includes(event.target.value)) return task;
+        if (task.description.includes(event.target.value)) return task;
+    });
+
+    if (filteredArray.length > 0) event.target.style.color = 'green';
+
+    paintTasks(filteredArray, seccionTasks);
+}
+
 
 function saveTask(event) {
     let task = {//input fetching values for the possible new task
