@@ -123,12 +123,6 @@ main .wrapper .tasks article .task{
     transition: 1s;
 }
 
-main .wrapper .tasks article{
-    transition: 2s;
-    opacity: 1;
-    transform: scale(1);
-}
-
 main .wrapper .tasks article .task h3{
     padding-left: 10px;
     flex-grow: 3;
@@ -211,14 +205,14 @@ main .wrapper .tasks article .description button{
     padding-top: 5px;
     cursor: pointer;
     border:4px solid var(--hoverColor);
-    color: var(--colorLetra);
-    background-color: var(--colorPrincipal);
+    color: var(--colorLetra);    
     font-family: var(--fontSecond);
     
 }
 
 .add #filters input::placeholder{
-    color: var(--colorLetra);
+    color: white;
+    text-shadow: 1px 1px 1px black, 0 0 1em var(--colorPrincipal), 0 0 0.2em var(--colorPrincipal);
     
 }
 
@@ -489,10 +483,8 @@ input[type=range] {
 /**MEDIAQUERIES***/
 
 @media (min-width:768px) {
-    .bg{    
-        
-        
-        height :95vh;
+    .bg{
+        height :87vh;
     }
     
 }

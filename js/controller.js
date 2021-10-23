@@ -31,15 +31,15 @@ function filterByPriority(event) {
 
 function filterByDescription(event) {
 
-    event.target.style.color = 'red';
+    event.target.style.backgroundColor = 'red';
     const filteredArray = tasksActive.filter(task => {
 
         if (task.title.includes(event.target.value)) return task;
         if (task.description.includes(event.target.value)) return task;
     });
 
-    if (filteredArray.length > 0) event.target.style.color = 'green';
-
+    if (filteredArray.length > 0) event.target.style.backgroundColor = 'green';
+    if (event.target.value == '') event.target.style.backgroundColor = 'white';
     paintTasks(filteredArray, seccionTasks);
 }
 
