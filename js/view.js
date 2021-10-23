@@ -133,6 +133,8 @@ function paintTask(task, section) {
     inputPercent.value = task.percent;
     btnComplete.dataset.taskid = task.id;
     btnComplete.innerText = 'COMPLETE';
+    article.style.height = '0px';
+
 
     inputPercent.addEventListener('input', updatePercent);
     btnComplete.addEventListener('click', completeTask);
@@ -152,7 +154,9 @@ function paintTask(task, section) {
     article.appendChild(divTask);
     article.appendChild(divDescription);
     section.appendChild(article);
-
+    setTimeout(() => {
+        article.style.height = '51px';
+    }, 1);
 
 }
 
@@ -217,6 +221,10 @@ function rotatePriority(event) { //click on circle increase or decrease priority
 }
 
 function toggleDescription(event) { //show or hide description
+    const articles = document.querySelectorAll('main .wrapper .tasks article');
+    articles.forEach(article => {
+        article.style.height = 'auto';
+    })
     let taskId = event.target.dataset.taskid;
     let divDescription = document.querySelector('#id' + taskId);
     if (divDescription.style.height == '0px') {

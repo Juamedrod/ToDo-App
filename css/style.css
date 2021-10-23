@@ -109,6 +109,8 @@ main .wrapper .tasks article{
     transition: 2s;
     opacity: 1;
     transform: scale(1);
+    border-bottom: 1px solid var(--colorPrincipal);
+    overflow: hidden;
 }
 
 main .wrapper .tasks article .task{
