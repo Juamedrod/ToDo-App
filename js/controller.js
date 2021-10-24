@@ -195,8 +195,8 @@ function divfollow(event) {
     if (x >= (document.documentElement.clientWidth) - 24) {
         x = document.documentElement.clientWidth - 24;
     }
-    if (y >= (document.documentElement.clientHeight) - 22) {
-        y = document.documentElement.clientHeight - 22;
+    if (y >= (document.documentElement.clientHeight) - 35) {
+        y = document.documentElement.clientHeight - 35;
     }
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';

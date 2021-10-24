@@ -32,7 +32,7 @@ img{
 
 html{
     scroll-behavior: smooth; 
-    cursor: none;       
+           
 }
 
 body{
@@ -198,7 +198,7 @@ main .wrapper .tasks article .description button{
     width: 100%;
     bottom: 0;   
     background-color: var(--colorPrincipal);
-    padding-top: 3px;    
+       
     
 }
 .add #filters {
@@ -206,6 +206,16 @@ main .wrapper .tasks article .description button{
     justify-content: space-around;
     max-height: 40px;
     padding-bottom: 10px;
+    width: 100%;
+    
+}
+
+.add div div.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
 }
 
 .add #filters input{
@@ -248,10 +258,15 @@ main .wrapper .tasks article .description button{
 
 .add a{
     color:white;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 60%;
-    margin: 3px 50px;
+    display:block;
+    text-decoration: none;    
+    font-size: 60%;    
+    text-align: left;
+    
+}
+
+.add a i{   
+  text-align: left;  
 }
 
 /*FIN ADD*/
@@ -512,10 +527,14 @@ main{
 /*** FIN MAIN ***/
 
 
-
 /**MEDIAQUERIES***/
 
 @media (min-width:768px) {
+    
+    html{        
+       cursor: none;    
+    }
+    
     .bg{
         height :87vh;
     }
@@ -529,7 +548,18 @@ main{
         transform: translate(-50%,-50%);
         border-radius: 50%;
         pointer-events: none;
-        display: block;       
+        display: block; 
+        animation: spinLikeCrazy 4s linear infinite;     
+    }
+
+    @keyframes spinLikeCrazy {
+        0%{
+            transform: translate(-50%,-50%) rotate(0deg) ;
+        }
+        100%{
+            transform: translate(-50%,-50%) rotate(360deg) ;
+        }
+        
     }
 
     body{        
@@ -570,7 +600,16 @@ main{
         cursor: none;
     }
 
-   
     
+
+  
     
 }
+
+
+
+
+/***ANIMATIONS***/
+
+
+/****END ANIMATIONS*****/
