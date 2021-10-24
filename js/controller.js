@@ -15,11 +15,27 @@ iFilter.addEventListener('click', filterByPriority);
 inputFilter.addEventListener('input', filterByDescription);
 btnSaveTask.addEventListener('click', saveTask);
 
-document.addEventListener('mousemove', divfollow);
-hoverables.forEach(hoverable => {
-    hoverable.addEventListener('mouseenter', hovered);
-    hoverable.addEventListener('mouseleave', endHovered);
-})
+
+/*Mediaquery and cursor management*/
+const mediaquery = window.matchMedia('(min-width: 768px)');
+mediaquery.addEventListener('change', resolutionChange);
+resolutionChange(mediaquery);
+
+function resolutionChange(event) {
+    if (event.matches) {
+        document.addEventListener('mousemove', divfollow);
+        hoverables.forEach(hoverable => {
+            hoverable.addEventListener('mouseenter', hovered);
+            hoverable.addEventListener('mouseleave', endHovered);
+        })
+    } else {
+        document.removeEventListener('mousemove', divfollow);
+        hoverables.forEach(hoverable => {
+            hoverable.removeEventListener('mouseenter', hovered);
+            hoverable.removeEventListener('mouseleave', endHovered);
+        })
+    }
+}
 
 function hovered() {
     cursor.style.width = '45px';
@@ -27,11 +43,25 @@ function hovered() {
     cursor.style.border = '4px dashed var(--hoverColor)';
 }
 
-
 function endHovered() {
     cursor.style.width = '20px';
     cursor.style.height = '20px';
     cursor.style.border = '2px solid var(--hoverColor)';
+}
+
+function divfollow(event) {
+
+    let x = event.clientX;
+    let y = event.clientY;
+
+    if (x >= (document.documentElement.clientWidth) - 24) {
+        x = document.documentElement.clientWidth - 24;
+    }
+    if (y >= (document.documentElement.clientHeight) - 35) {
+        y = document.documentElement.clientHeight - 35;
+    }
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
 }
 
 function filterByPriority(event) {
@@ -187,18 +217,5 @@ function retrieveTasksFromLocalStorage(key) {
 }
 
 
-function divfollow(event) {
 
-    let x = event.clientX;
-    let y = event.clientY;
-
-    if (x >= (document.documentElement.clientWidth) - 24) {
-        x = document.documentElement.clientWidth - 24;
-    }
-    if (y >= (document.documentElement.clientHeight) - 35) {
-        y = document.documentElement.clientHeight - 35;
-    }
-    cursor.style.left = x + 'px';
-    cursor.style.top = y + 'px';
-}
 
