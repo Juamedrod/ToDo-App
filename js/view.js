@@ -35,7 +35,6 @@ function startApp() {
     lsActives === null ? tasksActive : tasksActive = lsActives;
     let lsCompleted = retrieveTasksFromLocalStorage('tasksCompleted');
     lsCompleted === null ? tasksCompleted : tasksCompleted = lsCompleted;
-
     goHome();
 }
 
@@ -92,6 +91,7 @@ function paintTasks(tasks, section) {
 
 function paintTasksCompleted(tasks, section) {
     clearBoardHTML();
+    if (tasksCompleted.length <= 0) seccionTasks.innerHTML = '<div style="margin-top: 30px; text-align: center; color:red"><i class="far fa-angry fa-4x"></i><h3>This.....is.....EMPTYYY!!!</h3></div>';
     tasks.forEach(task => {
         paintTaskCompleted(task, section);
     });

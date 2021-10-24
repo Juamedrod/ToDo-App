@@ -49,6 +49,11 @@ body{
 
 
 /*HEADER*/
+h1{
+    font-family: var(--fontSecond);
+    text-shadow: 2px 0px 6px var(--hoverColor);
+}
+
 header{
     background-color: var(--colorPrincipal);
     color: var(--colorLetra);
