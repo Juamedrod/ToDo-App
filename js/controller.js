@@ -7,11 +7,14 @@ const selectPriority = document.querySelector('.popup #urgency');
 const message = document.querySelector('.popup #message');
 const iFilter = document.querySelector('.add #filters i');
 const inputFilter = document.querySelector('.add #filters input');
+const cursor = document.querySelector('.cursorAnim');
+const main = document.querySelector('main');
 
 /***LISTENERS */
 iFilter.addEventListener('click', filterByPriority);
 inputFilter.addEventListener('input', filterByDescription);
 btnSaveTask.addEventListener('click', saveTask);
+document.body.addEventListener('mousemove', divfollow);
 
 
 function filterByPriority(event) {
@@ -164,4 +167,13 @@ function saveTasksToLocalStorage(list, key) {
 
 function retrieveTasksFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
+}
+
+
+function divfollow(event) {
+    console.log('moved');
+    let x = event.clientX;
+    let y = event.clientY;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
 }
