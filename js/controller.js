@@ -34,8 +34,8 @@ function filterByDescription(event) {
     event.target.style.backgroundColor = 'red';
     const filteredArray = tasksActive.filter(task => {
 
-        if (task.title.includes(event.target.value)) return task;
-        if (task.description.includes(event.target.value)) return task;
+        if (task.title.toLowerCase().includes(event.target.value.toLowerCase())) return task;
+        if (task.description.toLowerCase().includes(event.target.value.toLowerCase())) return task;
     });
 
     if (filteredArray.length > 0) event.target.style.backgroundColor = 'green';
@@ -50,7 +50,7 @@ function saveTask(event) {
         title: inputTitle.value,
         description: inputDescription.value,
         percent: 0,
-        priority: selectPriority.value
+        priority: parseInt(selectPriority.value)
     }
     let error = isAcceptable(task);//this new possible task meet the requeriments?
 

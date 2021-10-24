@@ -31,8 +31,9 @@ img{
 }
 
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;        
 }
+
 body{
     font-family: var(--fontMain);
     
@@ -42,6 +43,7 @@ body{
     margin: 0px auto;
     max-width: 800px;
     padding: 0 20px;
+    
 }
 
 
@@ -106,11 +108,15 @@ header div nav ul li:hover a{
 /*TASKS*/
 
 main .wrapper .tasks article{
-    transition: 2s;
+    transition: 1s;
     opacity: 1;
     transform: scale(1);
     border-bottom: 1px solid var(--colorPrincipal);
-    overflow: hidden;
+    overflow: hidden;    
+}
+
+main .wrapper .tasks article:last-child{
+    margin-bottom: 100px;
 }
 
 main .wrapper .tasks article .task{
@@ -226,13 +232,25 @@ main .wrapper .tasks article .description button{
     
 }
 
-.add:hover i:last-child {
-    
+
+.add i:hover {        
     color: var(--hoverColor);
-    
+    transition: 0.5s;
+    font-size: 90%;    
 }
+
 .add i{
     cursor: pointer;
+    transition: 1s;
+    font-size: 100%;
+}
+
+.add a{
+    color:white;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 60%;
+    margin: 3px 50px;
 }
 
 /*FIN ADD*/

@@ -251,7 +251,7 @@ function toggleAddMenu(event) {
     if (isMenuOpen) {
         seccionTasks.style.display = '';
         seccionPopUp.style.display = 'none';
-        showFilters();
+        if (activesA.id == 'active') showFilters();
     } else {
         seccionTasks.style.display = 'none';
         seccionPopUp.style.display = 'flex';
