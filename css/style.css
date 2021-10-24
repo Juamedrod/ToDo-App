@@ -8,7 +8,7 @@ font-family: 'Rampart One', cursive; */
     --colorPrincipal:#1563a3;
     --colorSecundario:#ffa500;
     --colorLetra:#ffffff;
-    --hoverColor:#f01a1a;
+    --hoverColor:#68ab30;
     --fontMain:'Nanum Myeongjo', serif;
     --fontSecond:'Rampart One',serif;
     --priourgente:#ff0000;
@@ -31,12 +31,13 @@ img{
 }
 
 html{
-    scroll-behavior: smooth;        
+    scroll-behavior: smooth; 
+    cursor: none;       
 }
 
 body{
     font-family: var(--fontMain);
-    cursor: none;
+    
 }
 
 .wrapper{
@@ -131,17 +132,17 @@ main .wrapper .tasks article .task{
     transition: 1s;
 }
 
+main .wrapper .tasks article .task p{
+    margin-right: 5px;
+    color: var(--colorPrincipal);
+    
+}
+
 main .wrapper .tasks article .task h3{
     padding-left: 10px;
     flex-grow: 3;
     font-weight: bold;
     cursor: pointer;
-}
-
-main .wrapper .tasks article .task p{
-    margin-right: 5px;
-    color: var(--colorPrincipal);
-    
 }
 
 main .wrapper .tasks article .task i:last-child{
@@ -499,14 +500,7 @@ input[type=range] {
 
 /**CURSOR**/
 .cursorAnim{
-    position: absolute;
-    height:20px ;
-    width: 20px;
-    border: 2px solid black;
-    transition: 0.1s;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    pointer-events: none;
+    display: none;   
 }
 
 main{
@@ -525,5 +519,58 @@ main{
     .bg{
         height :87vh;
     }
+
+    .cursorAnim{
+        position: absolute;
+        height:20px ;
+        width: 20px;
+        border: 2px solid var(--hoverColor);
+        transition: 0.1s;
+        transform: translate(-50%,-50%);
+        border-radius: 50%;
+        pointer-events: none;
+        display: block;       
+    }
+
+    body{        
+        cursor: none;
+    }
+    
+    header div >div div{
+        cursor: none;
+    }
+
+    main .wrapper .tasks article .description button{       
+        cursor: none;
+    }
+
+    main .wrapper .tasks article .task h3{
+        
+        cursor: none;
+    }
+    
+    main .wrapper .tasks article .task i:last-child{
+          
+        cursor: none;
+    }
+
+    main .wrapper .tasks article .task i:first-child{       
+        cursor: none;  
+    }
+    header div >div div{
+        cursor: none;
+    }
+
+    .add i{
+        cursor: none;
+       
+    }
+
+    header div nav ul li a{    
+        cursor: none;
+    }
+
+   
+    
     
 }

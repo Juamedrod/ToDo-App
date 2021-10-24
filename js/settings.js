@@ -24,7 +24,7 @@ class Settings {
     }
 
     defaultSettings() {
-        let defaultSetts = JSON.parse('{"mainColor":"#1563a3","secColor":"#ffa500","fontColor":"#ffffff","hovercolor":"#f01a1a","fontMain":"Nanum Myeongjo","fontSecond":"Rampart One","priourgente":"#ff0000","prionormal":"#c4ec13","priorelaxed":"#00ff00"}');
+        let defaultSetts = JSON.parse('{"mainColor":"#1563a3","secColor":"#ffa500","fontColor":"#ffffff","hovercolor":"#68ab30","fontMain":"Nanum Myeongjo","fontSecond":"Rampart One","priourgente":"#ff0000","prionormal":"#c4ec13","priorelaxed":"#00ff00"}');
 
         this.mainColor = defaultSetts.mainColor
         this.secColor = defaultSetts.secColor

@@ -9,13 +9,30 @@ const iFilter = document.querySelector('.add #filters i');
 const inputFilter = document.querySelector('.add #filters input');
 const cursor = document.querySelector('.cursorAnim');
 const main = document.querySelector('main');
-
+const hoverables = document.querySelectorAll('.hoverable');
 /***LISTENERS */
 iFilter.addEventListener('click', filterByPriority);
 inputFilter.addEventListener('input', filterByDescription);
 btnSaveTask.addEventListener('click', saveTask);
-document.body.addEventListener('mousemove', divfollow);
 
+document.addEventListener('mousemove', divfollow);
+hoverables.forEach(hoverable => {
+    hoverable.addEventListener('mouseenter', hovered);
+    hoverable.addEventListener('mouseleave', endHovered);
+})
+
+function hovered() {
+    cursor.style.width = '45px';
+    cursor.style.height = '45px';
+    cursor.style.border = '4px dashed var(--hoverColor)';
+}
+
+
+function endHovered() {
+    cursor.style.width = '20px';
+    cursor.style.height = '20px';
+    cursor.style.border = '2px solid var(--hoverColor)';
+}
 
 function filterByPriority(event) {
 
@@ -171,9 +188,17 @@ function retrieveTasksFromLocalStorage(key) {
 
 
 function divfollow(event) {
-    console.log('moved');
+
     let x = event.clientX;
     let y = event.clientY;
+
+    if (x >= (document.documentElement.clientWidth) - 24) {
+        x = document.documentElement.clientWidth - 24;
+    }
+    if (y >= (document.documentElement.clientHeight) - 22) {
+        y = document.documentElement.clientHeight - 22;
+    }
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
 }
+
